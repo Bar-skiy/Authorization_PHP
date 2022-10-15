@@ -18,7 +18,7 @@ if ($user == false) {
     exit();
 }
 
-setcookie('person', $user['login'], time() + 3600, "/");
+setcookie('person', $user['login'], time() + 10, "/");
 
 $mysql->close();
 header('Location: /');

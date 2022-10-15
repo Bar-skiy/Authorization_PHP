@@ -13,7 +13,7 @@
 <body>
   <div class="container mt-4">
     <?php
-if($_COOKIE['person'] == ''):
+if(($_COOKIE['person']) == ''):
     ?>
     <div class="row">
       <div class="col">
@@ -46,6 +46,7 @@ if($_COOKIE['person'] == ''):
         </form>
 
         <?php else: ?>
+         
           <p>User <b><?= $_COOKIE['person'] ?></b> is authorized<br>
           <h1>Page available to authorized users</h1><br>
           <a href="/exit.php">Click the to exit</a></p>
