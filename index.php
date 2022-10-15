@@ -19,7 +19,7 @@ if(($_COOKIE['person']) == ''):
       <div class="col">
         <h1>Registration form</h1>
         <br />
-        <form action="validation-form/reg.php" method="post">
+        <form action="forms/reg.php" method="post">
           <label for="login">Login</label>
           <input type="text" class="form-control" name="login" id="login" placeholder="Create a login (at least 3 symbols)" />
           <br />
@@ -35,7 +35,7 @@ if(($_COOKIE['person']) == ''):
       <div class="col">
         <h1>Authorization form</h1>
         <br />
-        <form action="validation-form/auth.php" method="post">
+        <form action="forms/verif.php" method="post">
           <label for="login">Login</label>
           <input type="text" class="form-control" name="login" id="login" placeholder="Enter login" />
           <br />

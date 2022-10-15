@@ -41,8 +41,6 @@ if (mb_strlen($pass) < 3 || mb_strlen($pass) > 6) {
 
 $pass = md5($pass . "fyjt629");
 
-require "../blocks/connect.php";
-
 $mysql->query("INSERT INTO `users` (`login`, `name`, `password`) VALUES ('$login', '$name', '$pass')");
 
 $mysql->close();
