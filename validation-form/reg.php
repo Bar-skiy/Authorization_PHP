@@ -4,6 +4,19 @@ $login = filter_var(trim($_POST['login']), FILTER_UNSAFE_RAW);
 $name = filter_var(trim($_POST['name']), FILTER_UNSAFE_RAW);
 $pass = filter_var(trim($_POST['pass']), FILTER_UNSAFE_RAW);
 
+require "../blocks/connect.php";
+
+$result = $mysql->query("SELECT * FROM `users` WHERE `login`='$login'");
+$user = $result->fetch_assoc();
+
+if ($user == true) {
+    echo "This login already exists";
+    echo <<<HTML
+    <br><br><a href="/exit.php">Click the  to exit</a>
+    HTML;
+    exit();
+};
+
 if (mb_strlen($login) < 3 || mb_strlen($login) > 50) {
     echo "Invalid login length";
     echo <<<HTML
@@ -34,3 +47,5 @@ $mysql->query("INSERT INTO `users` (`login`, `name`, `password`) VALUES ('$login
 
 $mysql->close();
 header('Location: /');
+
+
